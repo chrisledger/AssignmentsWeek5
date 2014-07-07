@@ -3,6 +3,47 @@ title: "Week5 R Assignment"
 output: html_document
 ---
 
+5 Matrices
+
+```{r}
+A <- matrix(c(1,-1,-1,-1),nrow=2,ncol=2)
+B <- matrix(c(2,-1,3,-2),nrow=2,ncol=2)
+C <- matrix(c(1,0,0,0),nrow=2,ncol=2)
+D <- matrix(c(0,1,0,1,0,0,0,0,1),nrow=3,ncol=3)
+E <- matrix(c(1,0,0,0,0,1,0,1,0),nrow=3,ncol=3)
+```
+
+Idempotent Matrices
+
+Only C is idempotent
+
+```{r}
+A %*% A
+B %*% B
+C %*% C 
+D %*% D
+E %*% E
+```
+
+Orthogonal Matrices
+
+D and E are orthogonal
+
+```{r}
+A %*% t(A)
+B %*% t(B)
+C %*% t(C)
+D %*% t(D) 
+E %*% t(E) 
+```
+
+Creation of List
+
+```{r}
+
+
+```
+
 When rows are appended in R they are added row by row.
 When preallocated space is reserved beforehand.
 Preallocating is better because it does not require memory to be allocated repeatedly.
