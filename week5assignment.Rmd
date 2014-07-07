@@ -1,0 +1,62 @@
+---
+title: "Week5 R Assignment"
+output: html_document
+---
+
+When rows are appended in R they are added row by row.
+When preallocated space is reserved beforehand.
+Preallocating is better because it does not require memory to be allocated repeatedly.
+
+Appending to Vectors
+
+```{r}
+v <- c(1,2)
+v <- c(v,3)
+```
+
+Preallocating Vectors
+
+```{r}
+v <- vector("list",3)
+
+```
+
+Appending to Dataframe
+
+```{r}
+suburbs <- data.frame(city="Chicago",county="Cook",state="IL",pop=2853114)
+newRow <- data.frame(city="West Dundee", county="Kane", state="IL", pop=5428)
+suburbs <- rbind(suburbs, newRow)
+
+```
+
+Preallocating to Dataframe
+
+```{r}
+suburbs <- data.frame(city=character(2),pop=numeric(2))
+
+```
+
+Appending to List
+
+```{r}
+resultsa <- list(1,2,3,4,5)
+resultsb <- list(6,7,8,9,10)
+outlist <- list(resultsa)
+outlist <- append(outlist, list(resultsb))
+```
+
+Preallocating to List
+Use similar method to preallocating vectors
+
+
+Loading Boston dataset of MASS package
+
+```{r}
+library("MASS")
+data(Boston)
+newdf <- data.frame(Boston[1], Boston[6])
+colnames(newdf) <- c('Crime Rate','Room Occupancy')
+newdf
+```
+
